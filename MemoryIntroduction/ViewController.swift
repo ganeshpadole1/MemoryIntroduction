@@ -22,10 +22,14 @@ class ViewController: UIViewController {
 //        first = nil
         
         
-        var father: Parent?
+//        var father: Parent?
+//
+//        father = Parent()
+//        father = nil
         
-        father = Parent()
-        father = nil
+        
+        
+        
         
     }
 
@@ -46,17 +50,34 @@ class ViewController: UIViewController {
 //}
 
 
-class Child {
+//class Child {
+//    deinit {
+//        print("Child get deinit...")
+//    }
+//}
+//
+//class Parent {
+//
+//    var child = Child()
+//
+//    deinit {
+//        print("Parent get deinited....")
+//    }
+//}
+
+
+class Person {
+    let myJob: Job? = nil
+    
     deinit {
-        print("Child get deinit...")
+        print("Person class deinit....")
     }
 }
 
-class Parent {
-    
-    var child = Child()
+class Job {
+    let person: Person? = nil
     
     deinit {
-        print("Parent get deinited....")
+        print("Job class deinit...")
     }
 }
