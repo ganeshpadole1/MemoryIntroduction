@@ -9,31 +9,40 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        var first: MyClass? = MyClass()
-//        var second = first
-//        var third = first
-//
-//        third = nil
-//        second = nil
-//        first = nil
+        //        var first: MyClass? = MyClass()
+        //        var second = first
+        //        var third = first
+        //
+        //        third = nil
+        //        second = nil
+        //        first = nil
         
         
-//        var father: Parent?
-//
-//        father = Parent()
-//        father = nil
+        //        var father: Parent?
+        //
+        //        father = Parent()
+        //        father = nil
         
+        var person: Person?
+        var myDeveloperJob: Job?
         
+        person = Person()
+        myDeveloperJob = Job()
         
+        person?.myJob = myDeveloperJob
+        myDeveloperJob?.person = person
+        
+        person = nil
+        myDeveloperJob = nil
         
         
     }
-
-
+    
+    
 }
 
 //class MyClass {
@@ -67,7 +76,11 @@ class ViewController: UIViewController {
 
 
 class Person {
-    let myJob: Job? = nil
+    var myJob: Job? = nil
+    
+    init() {
+        print("person initiated...")
+    }
     
     deinit {
         print("Person class deinit....")
@@ -75,7 +88,11 @@ class Person {
 }
 
 class Job {
-    let person: Person? = nil
+   weak var person: Person? = nil
+    
+    init() {
+        print("Job initiated...")
+    }
     
     deinit {
         print("Job class deinit...")
