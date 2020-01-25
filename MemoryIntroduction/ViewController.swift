@@ -12,9 +12,28 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        var first: MyClass? = MyClass()
+        var second = first
+        var third = first
+        
+        third = nil
+        second = nil
+        first = nil
     }
 
 
 }
 
+class MyClass {
+    
+    var myInt = 10
+    
+    init() {
+        print("MyClass initiliazes....")
+    }
+    
+    deinit {
+        print("MyClass will be deallocated...")
+    }
+}
